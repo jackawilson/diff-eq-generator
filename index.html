@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diff Eq Test Question Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Optional: MathJax for nicer math rendering -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] },
+      svg: { fontCache: "global" }
+    };
+  </script>
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Diff Eq Test Question Generator</h1>
+      <p class="subtitle">Practice systems, matrices, and eigenvalue methods 🎓</p>
+    </header>
+
+    <section class="controls">
+      <label class="control-group">
+        <span>Topic:</span>
+        <select id="topic-select">
+          <option value="mixed">🎲 Mixed (all topics)</option>
+          <option value="firstOrderSystems">First-order system form</option>
+          <option value="elimination">Method of elimination</option>
+          <option value="matrixForm">Matrix form $x' = P(t)x + f(t)$</option>
+          <option value="eigenvalueMethod">Eigenvalue method</option>
+          <option value="matricesDet">Matrices & determinants</option>
+          <option value="mechanical">Mechanical systems (masses & springs)</option>
+        </select>
+      </label>
+
+      <button id="new-question-btn">New Question</button>
+      <button id="toggle-answer-btn" disabled>Show Answer</button>
+    </section>
+
+    <main class="card">
+      <h2 id="question-title">Click "New Question" to start</h2>
+      <div id="question-text" class="text-block"></div>
+      <hr />
+      <div id="answer-block" class="text-block hidden"></div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Built for self-drilling before the final 💪 —
+        just commit & enable GitHub Pages to use it anywhere.
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
